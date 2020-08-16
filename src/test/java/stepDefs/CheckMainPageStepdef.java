@@ -1,6 +1,7 @@
 package stepDefs;
 
 import base.BaseStep;
+import cucumber.api.java.After;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import org.openqa.selenium.By;
@@ -47,7 +48,7 @@ public class CheckMainPageStepdef extends BaseStep {
     @Then("Убедиться что в центре страницы отобразилось {string}")
     public void убедитьсяЧтоВЦентреСтраницыОтобразилосьЖенскиеАксессуары() {
     }
-
+    @After
     @Then("Закрыть браузер")
     public void close() {
         closeBrowser();
