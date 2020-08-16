@@ -16,16 +16,18 @@ public class BaseStep {
 
     public WebDriver driver;
 
+    @Step("Получение экземпляра драйвера и его настройка")
     @BeforeTest
     public void openBrowser() {
         WebDriverManager.chromedriver().setup();
         this.driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
-        driver.manage().timeouts().pageLoadTimeout(25, TimeUnit.SECONDS);
-        driver.manage().timeouts().setScriptTimeout(25, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(50, TimeUnit.SECONDS);
+        driver.manage().timeouts().setScriptTimeout(50, TimeUnit.SECONDS);
         driver.manage().window().maximize();
     }
 
+    @Step("Завершаем работу драйвера")
     @AfterTest
     public void closeBrowser() {
         if(driver != null){
